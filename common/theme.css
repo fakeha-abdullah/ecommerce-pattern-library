@@ -1,7 +1,7 @@
 :root {
   --color-primary: #96d9ec;
   --color-secondary: #eb7d72;
-  --color-accent: #b1ddea, #76a1ab, #198c9f, #b0c452, #c4e0ae, #fcdf79, #f8d259, #5e4777;
+  --color-accent: #b1ddea;
   --font-primary: "Nunito Sans", sans-serif;
   --font-secondary: astounder-squared-lc-bb, sans-serif;
 }
