@@ -1,0 +1,16 @@
+.sub-nav {
+  background-color: var(--color-primary);
+}
+
+.sub-text {
+  color: #fff;
+  text-align: left;
+}
+
+.link {
+  color: #fff;
+}
+
+.link:hover {
+  color: #105c67;
+}

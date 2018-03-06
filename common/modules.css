@@ -1091,6 +1091,7 @@ button[disabled] {
 
 a:hover, a:active {
   outline: none;
+  color: #105c67;
 }
 
 a:focus,
