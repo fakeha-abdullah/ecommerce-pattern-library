@@ -1,9 +1,10 @@
 :root {
-  --color-primary: #96d9ec;
-  --color-secondary: #eb7d72;
-  --color-accent: #b1ddea;
+  --color-primary: #b0ddea;
+  --color-secondary: #f0d4d0;
+  --color-accent: #ec7d72;
+  --color-yellow: #fddf78;
   --font-primary: "Nunito Sans", sans-serif;
-  --font-secondary: astounder-squared-lc-bb, sans-serif;
+  /* --font-secondary: astounder-squared-lc-bb, sans-serif; */
 }
 
 html {
