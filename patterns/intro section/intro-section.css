@@ -1,0 +1,16 @@
+.intro-section {
+  background-color: var(--color-primary);
+}
+
+.intro-text {
+  color: #fff;
+  text-align: left;
+}
+
+.link {
+  color: #fff;
+}
+
+.link:hover {
+  color: #105c67;
+}

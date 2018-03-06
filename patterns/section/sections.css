@@ -1,0 +1,17 @@
+.section {
+  background-color: var(--color-primary);
+}
+
+.section-text {
+  color: #fff;
+  text-align: left;
+}
+
+.giga {
+  text-align: center;
+}
+
+.icon {
+  display: inline-block;
+  position: relative;
+}
