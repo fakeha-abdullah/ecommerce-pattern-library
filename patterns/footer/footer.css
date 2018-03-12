@@ -2,10 +2,6 @@
   background-color: var(--color-secondary);
   color: #fff;
 }
-.icon-footer {
-  border-radius: 25rem;
-  color: var(--color-secondary);
-}
 
 .i-32, .i--32 {
   height: 32px;
@@ -15,5 +11,4 @@
 .icon {
   display: inline-block;
   position: relative;
-  background-size: contain;
 }
