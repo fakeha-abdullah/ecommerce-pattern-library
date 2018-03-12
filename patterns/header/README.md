@@ -1,0 +1,1 @@
+The header pattern is used on the top of every Cereal Nostalgia webpage. The header features the websites logo and the main website navigation, as well as,the option of searching the entire website or checking the shopping cart.
