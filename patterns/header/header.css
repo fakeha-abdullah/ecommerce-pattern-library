@@ -2,6 +2,17 @@
   background-color: var(--color-secondary);
 }
 
+.i-64, .i--64 {
+  height: 64px;
+  width: 64px;
+}
+
+.icon {
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+}
+
 a {
   text-decoration: none;
   color: #105c67;
