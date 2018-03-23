@@ -3,12 +3,14 @@
   color: #fff;
 }
 
-.i-32, .i--32 {
-  height: 32px;
-  width: 32px;
-}
-
 .icon {
   display: inline-block;
-  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.hover {
+  color: #fff;
 }

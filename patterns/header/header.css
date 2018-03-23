@@ -2,11 +2,6 @@
   background-color: var(--color-secondary);
 }
 
-.i-64, .i--64 {
-  height: 64px;
-  width: 64px;
-}
-
 .icon {
   display: inline-block;
   position: relative;
@@ -33,20 +28,4 @@ a {
   list-style-type: none;
   display: inline-block;
   text-decoration: none;
-}
-
-@media only screen and (min-width: 20em) {
-
-  .mega {
-    text-align: center;
-  }
-
-}
-
-@media only screen and (min-width: 38em) {
-
-  .mega {
-    text-align: center;
-  }
-
 }
