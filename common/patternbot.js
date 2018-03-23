@@ -101,7 +101,6 @@ const patternBotIncludes = function (manifest) {
     for (i = 0; i < t; i++) {
       if (rootMatcher.test(allScripts[i].src)) {
         return allScripts[i].src.split(rootMatcher)[0];
-        break;
       }
     }
   };
@@ -143,7 +142,7 @@ const patternBotIncludes = function (manifest) {
     let patternInfoJson;
     const data = patternElem.innerText.trim();
 
-    if (!data) return {}
+    if (!data) return {};
 
     try {
       patternInfoJson = JSON.parse(data);
@@ -172,9 +171,50 @@ const patternBotIncludes = function (manifest) {
     };
   };
 
+  const correctHrefPaths = function (html) {
+    const hrefSearch = /href\s*=\s*"\.\.\/\.\.\//g;
+    const srcSearch = /src\s*=\s*"\.\.\/\.\.\//g;
+    const urlSearch = /url\((["']*)\.\.\/\.\.\//g;
+
+    return html
+      .replace(hrefSearch, 'href="../')
+      .replace(srcSearch, 'src="../')
+      .replace(urlSearch, 'url($1../')
+    ;
+  };
+
+  const buildAccurateSelectorFromElem = function (elem) {
+    let theSelector = elem.tagName.toLowerCase();
+
+    if (elem.id) theSelector += `#${elem.id}`;
+    if (elem.getAttribute('role')) theSelector += `[role="${elem.getAttribute('role')}"]`;
+    if (elem.classList.length > 0) theSelector += `.${[].join.call(elem.classList, '.')}`;
+
+    theSelector += ':first-of-type';
+
+    return theSelector;
+  };
+
+  /**
+   * This is an ugly mess: Blink does not properly render SVGs when using DOMParser alone.
+   * But, I need DOMParser to determine the correct element to extract.
+   *
+   * I only want to get the first element within the `<body>` tag of the loaded document.
+   * This dumps the whole, messy, HTML document into a temporary `<div>`,
+   * then uses the DOMParser version, of the same element, to create an accurate selector,
+   * then finds that single element in the temporary `<div>` using the selector and returns it.
+   */
   const htmlStringToElem = function (html) {
+    let theSelector = '';
+    const tmpDoc = document.createElement('div');
+    const finalTmpDoc = document.createElement('div');
     const doc = (new DOMParser()).parseFromString(html, 'text/html');
-    return doc.body;
+
+    tmpDoc.innerHTML = html;
+    theSelector = buildAccurateSelectorFromElem(doc.body.firstElementChild);
+    finalTmpDoc.appendChild(tmpDoc.querySelector(theSelector));
+
+    return finalTmpDoc;
   };
 
   const replaceElementValue = function (elem, sel, data) {
@@ -197,7 +237,7 @@ const patternBotIncludes = function (manifest) {
 
     if (!patternDetails.html) return;
 
-    patternOutElem = htmlStringToElem(patternDetails.html);
+    patternOutElem = htmlStringToElem(correctHrefPaths(patternDetails.html));
     patternData = getPatternInfo(patternElem);
 
     Object.keys(patternData).forEach((sel) => {
@@ -234,7 +274,7 @@ const patternBotIncludes = function (manifest) {
   };
 
   const hideLoadingScreen = function () {
-    const allDownloadedInterval = setInterval(() => {
+    let allDownloadedInterval = setInterval(() => {
       if (Object.values(downloadedAssets).includes(false)) return;
 
       clearInterval(allDownloadedInterval);
@@ -348,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1520865088518
+ * @version 1521770344815
  */
-const patternManifest_1520865088518 = {
+const patternManifest_1521770344814 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -419,79 +459,17 @@ const patternManifest_1520865088518 = {
     ],
     "typografierUrl": "0,100,1.3,1.067,0;38,110,1.4,1.125,1;60,120,1.5,1.125,1;90,130,1.5,1.125,1",
     "theme": {
-      "colours": {
-        "primary": [
-          {
-            "name": "--color-primary",
-            "namePretty": "Primary",
-            "raw": "#b0ddea",
-            "hex": "#b0ddea",
-            "rgba": "rgba(176, 221, 234, 1)"
-          }
-        ],
-        "secondary": [
-          {
-            "name": "--color-secondary",
-            "namePretty": "Secondary",
-            "raw": "#f0d4d0",
-            "hex": "#f0d4d0",
-            "rgba": "rgba(240, 212, 208, 1)"
-          }
-        ],
-        "neutral": [],
-        "accent": [
-          {
-            "name": "--color-accent",
-            "namePretty": "Accent",
-            "raw": "#ec7d72",
-            "hex": "#ec7d72",
-            "rgba": "rgba(236, 125, 114, 1)"
-          },
-          {
-            "name": "--color-yellow",
-            "namePretty": "Yellow",
-            "raw": "#fddf78",
-            "hex": "#fddf78",
-            "rgba": "rgba(253, 223, 120, 1)"
-          }
-        ]
-      },
-      "fonts": {
-        "primary": {
-          "name": "--font-primary",
-          "namePretty": "Nunito Sans",
-          "raw": "\"Nunito Sans\", sans-serif",
-          "weights": {
-            "normal": {
-              "weight": "normal",
-              "hasNormal": true,
-              "hasItalic": false
-            }
-          }
-        },
-        "secondary": {},
-        "accent": []
-      },
-      "coloursRaw": {
-        "--color-primary": "#b0ddea",
-        "--color-secondary": "#f0d4d0",
-        "--color-accent": "#ec7d72",
-        "--color-yellow": "#fddf78"
-      },
-      "fontsRaw": {
-        "--font-primary": "\"Nunito Sans\", sans-serif"
-      }
+      "colours": {},
+      "fonts": {}
     },
     "readme": {
       "attributes": {
         "name": "Cereal Nostalgia",
         "fontUrl": "https://fonts.googleapis.com/css?family=Nunito+Sans",
-        "backgroundColour": "#fff",
-        "interfaceColours": {
-          "primary": 0,
-          "opposite": 255
-        }
-      }
+        "backgroundColour": "#fff"
+      },
+      "bodyRaw": "**Calling out children of the 90's and seekers of something new!**\n\nWe offer different cereal brands that bring back memories, and we make sure nostalgia hits you just right! Our mix flavour cocktail option is also there for all those seekers whom are open to trying something new.\n",
+      "bodyBasic": "**Calling out children of the 90's and seekers of something new!** We offer different cereal brands that bring back memories, and we make sure nostalgia hits you just right! Our mix flavour cocktail option is also there for all those seekers whom are open to trying something new."
     },
     "icons": [
       "cart",
@@ -540,7 +518,13 @@ const patternManifest_1520865088518 = {
       "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation",
       "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/section"
     ],
-    "pages": []
+    "pages": [
+      {
+        "name": "home.html",
+        "namePretty": "Home",
+        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/home.html"
+      }
+    ]
   },
   "userPatterns": [
     {
@@ -603,7 +587,8 @@ const patternManifest_1520865088518 = {
           "name": "basic-card",
           "namePretty": "Basic card",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/basic-card.html",
-          "localPath": "patterns/cards/basic-card.html"
+          "localPath": "patterns/cards/basic-card.html",
+          "readme": {}
         },
         {
           "name": "info-card",
@@ -611,11 +596,11 @@ const patternManifest_1520865088518 = {
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/info-card.html",
           "localPath": "patterns/cards/info-card.html",
           "readme": {
-            "background-color": "var(--color-primary)",
-            "backgroundColour": "#b0ddea",
+            "background-color": "--color-primary",
+            "backgroundColour": "--color-primary",
             "interfaceColours": {
-              "primary": 0,
-              "opposite": 255
+              "primary": 255,
+              "opposite": 0
             }
           }
         }
@@ -855,5 +840,5 @@ const patternManifest_1520865088518 = {
   }
 };
 
-patternBotIncludes(patternManifest_1520865088518);
+patternBotIncludes(patternManifest_1521770344814);
 }());
