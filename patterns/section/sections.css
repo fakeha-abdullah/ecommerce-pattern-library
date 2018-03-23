@@ -15,3 +15,31 @@
   display: inline-block;
   position: relative;
 }
+
+.btn {
+  background-color: #fddf78;
+  border-radius: 20px;
+  border-color: #fff;
+
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fddf78;
+  color: #105c67;
+  border-color: #fff;
+}
+
+.btn-card {
+  background-color: #b0ddea;
+  border-radius: 20px;
+  border-color: #fff;
+
+  color: #fff;
+}
+
+.btn-card:hover {
+  background-color: #b0ddea;
+  color: #105c67;
+  border-color: #fff;
+}
