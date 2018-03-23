@@ -1,18 +1,41 @@
 .img-flex {
   display: block;
   width: 100%;
+  position: relative;
 }
 
 .banner {
-  position: relative;
-  max-height: 24em;
+  /* max-height: 24em; */
   overflow: hidden;
 }
 
 .banner-content {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  background-color: #fff;
+  border: 2px solid var(--color-accent);
+  max-width: 450px;
+  min-width: 220px;
+  min-height: 150px;
+  max-height: 400px;
+  transform:scale(1.5)
+}
+
+.banner-img {
+  opacity: .6;
+}
+
+.btn {
+  background-color: #fddf78;
+  border-radius: 20px;
+  border-color: #fff;
   color: #fff;
-  width: 100%;
+}
+
+.btn:hover {
+  background-color: #fddf78;
+  color: #105c67;
+  border-color: #fff;
+}
+
+@media only screen and (min-width: 20em) {
+
 }
