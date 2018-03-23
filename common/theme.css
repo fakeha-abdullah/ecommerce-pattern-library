@@ -10,3 +10,45 @@
 html {
   font-family: var(--font-primary);
 }
+
+h1 {
+  #
+}
+
+a{
+  color: #b0ddea;
+}
+
+h1 {
+  color: #ec7d72;
+}
+h2 {
+  color: #5d4677;
+}
+h3 {
+  color: #148b9f;
+}
+h4 {
+  color: #148b9f;
+}
+
+ul,li,ol,dl,dt,dd {
+  color: #5d4677;
+}
+
+cite {
+  color: #148b9f;
+}
+
+q {
+  color: #ec7d72;
+}
+
+strong {
+  color: #5d4677;
+}
+
+mark {
+  color: #000;
+  background-color: #fddf78;
+}
