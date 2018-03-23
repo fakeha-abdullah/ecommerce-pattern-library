@@ -10,7 +10,6 @@ html {
 
 a {
   background-color: transparent;
-  color: #b0ddea;
   -webkit-text-decoration-skip: objects;
 }
 
@@ -148,18 +147,10 @@ thead th {
   width: 100%;
 }
 
-h1 {
-  color: #ec7d72;
-}
-h2 {
-  color: #5d4677;
-}
-h3 {
-  color: #148b9f;
-}
-h4 {
-  color: #148b9f;
-}
+h1,
+h2,
+h3,
+h4,
 h5,
 h6,
 p,
