@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1521771134521
+ * @version 1522775304451
  */
-const patternManifest_1521771134521 = {
+const patternManifest_1522775304451 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -459,14 +459,78 @@ const patternManifest_1521771134521 = {
     ],
     "typografierUrl": "0,100,1.3,1.067,0;38,110,1.4,1.125,1;60,120,1.5,1.125,1;90,130,1.5,1.125,1",
     "theme": {
-      "colours": {},
-      "fonts": {}
+      "colours": {
+        "primary": [
+          {
+            "name": "--color-primary",
+            "namePretty": "Primary",
+            "raw": "#b0ddea",
+            "hex": "#b0ddea",
+            "rgba": "rgba(176, 221, 234, 1)"
+          }
+        ],
+        "secondary": [
+          {
+            "name": "--color-secondary",
+            "namePretty": "Secondary",
+            "raw": "#f0d4d0",
+            "hex": "#f0d4d0",
+            "rgba": "rgba(240, 212, 208, 1)"
+          }
+        ],
+        "neutral": [],
+        "accent": [
+          {
+            "name": "--color-accent",
+            "namePretty": "Accent",
+            "raw": "#ec7d72",
+            "hex": "#ec7d72",
+            "rgba": "rgba(236, 125, 114, 1)"
+          },
+          {
+            "name": "--color-yellow",
+            "namePretty": "Yellow",
+            "raw": "#fddf78",
+            "hex": "#fddf78",
+            "rgba": "rgba(253, 223, 120, 1)"
+          }
+        ]
+      },
+      "fonts": {
+        "primary": {
+          "name": "--font-primary",
+          "namePretty": "Nunito Sans",
+          "raw": "\"Nunito Sans\", sans-serif",
+          "weights": {
+            "normal": {
+              "weight": "normal",
+              "hasNormal": true,
+              "hasItalic": false
+            }
+          }
+        },
+        "secondary": {},
+        "accent": []
+      },
+      "coloursRaw": {
+        "--color-primary": "#b0ddea",
+        "--color-secondary": "#f0d4d0",
+        "--color-accent": "#ec7d72",
+        "--color-yellow": "#fddf78"
+      },
+      "fontsRaw": {
+        "--font-primary": "\"Nunito Sans\", sans-serif"
+      }
     },
     "readme": {
       "attributes": {
         "name": "Cereal Nostalgia",
         "fontUrl": "https://fonts.googleapis.com/css?family=Nunito+Sans",
-        "backgroundColour": "#fff"
+        "backgroundColour": "#fff",
+        "interfaceColours": {
+          "primary": 0,
+          "opposite": 255
+        }
       },
       "bodyRaw": "**Calling out children of the 90's and seekers of something new!**\n\nWe offer different cereal brands that bring back memories, and we make sure nostalgia hits you just right! Our mix flavour cocktail option is also there for all those seekers whom are open to trying something new.\n",
       "bodyBasic": "**Calling out children of the 90's and seekers of something new!** We offer different cereal brands that bring back memories, and we make sure nostalgia hits you just right! Our mix flavour cocktail option is also there for all those seekers whom are open to trying something new."
@@ -514,15 +578,25 @@ const patternManifest_1521771134521 = {
       "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer",
       "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms",
       "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro section",
+      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section",
       "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation",
       "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/section"
     ],
     "pages": [
       {
+        "name": "check-out.html",
+        "namePretty": "Check out",
+        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/check-out.html"
+      },
+      {
         "name": "home.html",
         "namePretty": "Home",
         "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/home.html"
+      },
+      {
+        "name": "product.html",
+        "namePretty": "Product",
+        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product.html"
       }
     ]
   },
@@ -584,10 +658,10 @@ const patternManifest_1521771134521 = {
       "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards",
       "html": [
         {
-          "name": "basic-card",
-          "namePretty": "Basic card",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/basic-card.html",
-          "localPath": "patterns/cards/basic-card.html",
+          "name": "details-card",
+          "namePretty": "Details card",
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/details-card.html",
+          "localPath": "patterns/cards/details-card.html",
           "readme": {}
         },
         {
@@ -596,11 +670,11 @@ const patternManifest_1521771134521 = {
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/info-card.html",
           "localPath": "patterns/cards/info-card.html",
           "readme": {
-            "background-color": "--color-primary",
-            "backgroundColour": "--color-primary",
+            "background-color": "var(--color-primary)",
+            "backgroundColour": "#b0ddea",
             "interfaceColours": {
-              "primary": 255,
-              "opposite": 0
+              "primary": 0,
+              "opposite": 255
             }
           }
         }
@@ -727,29 +801,29 @@ const patternManifest_1521771134521 = {
     {
       "name": "intro-section",
       "namePretty": "Intro section",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro section",
+      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section",
       "html": [
         {
           "name": "intro-section",
           "namePretty": "Intro section",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro section/intro-section.html",
-          "localPath": "patterns/intro section/intro-section.html"
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/intro-section.html",
+          "localPath": "patterns/intro-section/intro-section.html"
         }
       ],
       "md": [
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro section/README.md",
-          "localPath": "patterns/intro section/README.md"
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/README.md",
+          "localPath": "patterns/intro-section/README.md"
         }
       ],
       "css": [
         {
           "name": "intro-section",
           "namePretty": "Intro section",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro section/intro-section.css",
-          "localPath": "patterns/intro section/intro-section.css"
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/intro-section.css",
+          "localPath": "patterns/intro-section/intro-section.css"
         }
       ]
     },
@@ -840,5 +914,5 @@ const patternManifest_1521771134521 = {
   }
 };
 
-patternBotIncludes(patternManifest_1521771134521);
+patternBotIncludes(patternManifest_1522775304451);
 }());
