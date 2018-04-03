@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1522775304451
+ * @version 1522775958463
  */
-const patternManifest_1522775304451 = {
+const patternManifest_1522775958463 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -592,11 +592,6 @@ const patternManifest_1522775304451 = {
         "name": "home.html",
         "namePretty": "Home",
         "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/home.html"
-      },
-      {
-        "name": "product.html",
-        "namePretty": "Product",
-        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product.html"
       }
     ]
   },
@@ -661,8 +656,7 @@ const patternManifest_1522775304451 = {
           "name": "details-card",
           "namePretty": "Details card",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/details-card.html",
-          "localPath": "patterns/cards/details-card.html",
-          "readme": {}
+          "localPath": "patterns/cards/details-card.html"
         },
         {
           "name": "info-card",
@@ -670,7 +664,7 @@ const patternManifest_1522775304451 = {
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/info-card.html",
           "localPath": "patterns/cards/info-card.html",
           "readme": {
-            "background-color": "var(--color-primary)",
+            "background-color": "--color-primary",
             "backgroundColour": "#b0ddea",
             "interfaceColours": {
               "primary": 0,
@@ -914,5 +908,5 @@ const patternManifest_1522775304451 = {
   }
 };
 
-patternBotIncludes(patternManifest_1522775304451);
+patternBotIncludes(patternManifest_1522775958463);
 }());
