@@ -14,8 +14,12 @@
       --color-patternbot-interface: 0;
       --color-patternbot-interface-opposite: 255;
       --color-patternbot-interface-background: #fff;
+        --font-patternbot-primary: "Nunito Sans", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     }
 
+      html {
+        font-family: "Nunito Sans", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      }
 
     body {
       background-color: var(--color-patternbot-interface-background);
@@ -71,14 +75,14 @@
         <svg class="nav-icon-open"><use xlink:href="#nav-icon"></use></svg>
         <svg class="nav-icon-close"><use xlink:href="#nav-icon-close"></use></svg>
       </button>
-      <h1 class="kilo pad-t-1-8 pad-b-1-8 push-0" style="color: ; ">
+      <h1 class="kilo pad-t-1-8 pad-b-1-8 push-0" style="color: #b0ddea; font-family: ;">
           Cereal Nostalgia
           <span class="block normal milli">Pattern Library</span>
       </h1>
     </header>
 
     <header class="masthead-m" aria-hidden="true" id="patternbot-nav">
-      <h1 class="tera gutter pad-t pad-b push-0" style="color: ; ">
+      <h1 class="tera gutter pad-t pad-b push-0" style="color: #b0ddea; font-family: ;">
           Cereal Nostalgia
           <span class="block normal mega pad-t-1-4">Pattern Library</span>
       </h1>
@@ -238,9 +242,29 @@
         <nav class="nav mega">
           <ul class="list-group">
               <li>
+                <a class="gutter pad-t-1-4 pad-b-1-4 block page-pop" href="pages/check-out.html" target="_blank">
+                  <div class="relative">
+                    <span>Check out</span>
+                    <i class="icon i-18 absolute pin-cr">
+                      <svg><use xlink:href="#icon-pop-out" /></svg>
+                    </i>
+                  </div>
+                </a>
+              </li>
+              <li>
                 <a class="gutter pad-t-1-4 pad-b-1-4 block page-pop" href="pages/home.html" target="_blank">
                   <div class="relative">
                     <span>Home</span>
+                    <i class="icon i-18 absolute pin-cr">
+                      <svg><use xlink:href="#icon-pop-out" /></svg>
+                    </i>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="gutter pad-t-1-4 pad-b-1-4 block page-pop" href="pages/product.html" target="_blank">
+                  <div class="relative">
+                    <span>Product</span>
                     <i class="icon i-18 absolute pin-cr">
                       <svg><use xlink:href="#icon-pop-out" /></svg>
                     </i>
@@ -252,17 +276,27 @@
     </header>
 
     <main class="main">
-        <section class="pattern" id="brand" role="tabpanel" hidden aria-hidden="true" style="">
-  <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Brand</h2>
-        <ul class="list-group-inline gutter absolute pin-cr">
-        </ul>
+        <section class="pattern" id="brand" role="tabpanel" hidden aria-hidden="true" >
+  <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" >
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Brand</h2>
+      <nav class="pattern-nav">
+        <ol class="list-group-inline push-1-4 pad-b-1-4">
+            <li><a href="#brand--logos">Logos</a></li>
+            <li><a href="#brand--colours">Colours</a></li>
+            <li><a href="#brand--typefaces">Typefaces</a></li>
+        </ol>
+      </nav>
   </div>
 
 
   
 
     <div class="pattern-details " id="brand--logos" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Logos</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+            </ul>
+        </div>
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter pad-t-1-2 pad-b-1-2">
@@ -274,12 +308,46 @@
 
       </div>
     </div>
+    <div class="pattern-details " id="brand--colours" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Colours</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+            </ul>
+        </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/brand/2-colours.html" scrolling="no" data-inject-css=" " ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="pattern-details " id="brand--typefaces" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Typefaces</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+            </ul>
+        </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/brand/3-typefaces.html" scrolling="no" data-inject-css=" " ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 </section>
 
         <section class="pattern" id="typography" role="tabpanel" hidden aria-hidden="true" >
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" >
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Typography</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Typography</h2>
       <nav class="pattern-nav">
         <ol class="list-group-inline push-1-4 pad-b-1-4">
             <li><a href="#typography--size-adjustments">Size adjustments</a></li>
@@ -583,7 +651,7 @@
 
         <section class="pattern" id="grid" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Grid</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Grid</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
         </ul>
   </div>
@@ -612,7 +680,7 @@
 
         <section class="pattern" id="modules" role="tabpanel" hidden aria-hidden="true" >
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" >
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Modules</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Modules</h2>
       <nav class="pattern-nav">
         <ol class="list-group-inline push-1-4 pad-b-1-4">
             <li><a href="#modules--list-group">List group</a></li>
@@ -733,7 +801,7 @@
 
         <section class="pattern" id="icons" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Icons</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Icons</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
         </ul>
   </div>
@@ -762,7 +830,7 @@
 
         <section class="pattern" id="banner" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Banner</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Banner</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
             <li>
               <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="banner-banner-code-sample">
@@ -843,7 +911,7 @@
 
         <section class="pattern" id="buttons" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Buttons</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Buttons</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
             <li>
               <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="buttons-buttons-code-sample">
@@ -921,10 +989,10 @@
 
         <section class="pattern" id="cards" role="tabpanel" hidden aria-hidden="true" >
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" >
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Cards</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Cards</h2>
       <nav class="pattern-nav">
         <ol class="list-group-inline push-1-4 pad-b-1-4">
-            <li><a href="#cards--basic-card">Basic card</a></li>
+            <li><a href="#cards--details-card">Details card</a></li>
             <li><a href="#cards--info-card">Info card</a></li>
         </ol>
       </nav>
@@ -937,26 +1005,26 @@
 
   
 
-    <div class="pattern-details " id="cards--basic-card" style="">
+    <div class="pattern-details " id="cards--details-card" style="">
         <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
-          <h3 class="pattern-name tera push-1-8">Basic card</h3>
+          <h3 class="pattern-name tera push-1-8">Details card</h3>
             <ul class="list-group-inline gutter absolute pin-cr">
                 <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="cards-basic-card-code-sample">
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="cards-details-card-code-sample">
                     <i class="icon i-18">
                       <svg><use xlink:href="#icon-code"></use></svg>
                     </i>
                   </button>
                 </li>
                 <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="cards/basic-card" hidden>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="cards/details-card" hidden>
                     <i class="icon i-18">
                       <svg><use xlink:href="#icon-copy"></use></svg>
                     </i>
                   </button>
                 </li>
                 <li>
-                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/cards/basic-card.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/cards/details-card.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
                     <i class="icon i-18">
                       <svg><use xlink:href="#icon-pop-out"></use></svg>
                     </i>
@@ -964,16 +1032,12 @@
                 </li>
             </ul>
         </div>
-          <div class="pattern-desc milli island" style="">
-            <div class="max-length"><p>jjjskask</p>
-</div>
-          </div>
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
           <div class="resizeable-pattern relative" style="">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/cards/basic-card.html" scrolling="no" data-inject-css=" " ></iframe>
+            <iframe data-src="patterns/cards/details-card.html" scrolling="no" data-inject-css=" " ></iframe>
               <div class="resizeable-pattern-length">
                 <div class="resize-handle resize-handle-left" style="">
                   <i class="icon i-18">
@@ -989,24 +1053,32 @@
           </div>
         </div>
 
-          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="cards-basic-card-code-sample" tabindex="-1">
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="cards-details-card-code-sample" tabindex="-1">
             <div class="pattern-code relative milli island-1-2" style="">
-              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#cards-basic-card-code-sample-copy-chunk" hidden>
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#cards-details-card-code-sample-copy-chunk" hidden>
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="cards-basic-card-code-sample-copy-chunk">&lt;div class="island-1-2"&gt;
-  &lt;h2 class="push-1-3">This is a card&lt;/h2>
-  &lt;p class="push-0">Lorem ipsum dolor sit amet, consectectuer adipiscing elit.&lt;/p>
+              <code><pre id="cards-details-card-code-sample-copy-chunk">&lt;div class="section island push" id="detail-page"&gt;
+  &lt;div class="wrapper">
+    &lt;div class="section-text max-length push-2">
+      &lt;h2 class="tera push-1-4 pad-t-1-2">Froot Loops cereal&lt;/h2>
+      &lt;p class="push-1-2">
+        A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
+      &lt;/p>
+      &lt;a class="btn" href="#">CHECK OUT&lt;/a>
+      &lt;a class="btn btn-card" href="#">MIX FLAVOURS&lt;/a>
+    &lt;/div>
+  &lt;/div>
 &lt;/div>
 </pre></code>
             </div>
           </div>
       </div>
     </div>
-    <div class="pattern-details pattern-details-has-bg" id="cards--info-card" style="background-color:--color-primary;">
-        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="border-color:rgba(255,255,255,.1); color:rgba(255,255,255,.9);">
+    <div class="pattern-details pattern-details-has-bg" id="cards--info-card" style="background-color:#b0ddea;">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="border-color:rgba(0,0,0,.1); color:rgba(0,0,0,.9);">
           <h3 class="pattern-name tera push-1-8">Info card</h3>
             <ul class="list-group-inline gutter absolute pin-cr">
                 <li>
@@ -1032,23 +1104,23 @@
                 </li>
             </ul>
         </div>
-          <div class="pattern-desc milli island" style="border-color:rgba(255,255,255,.05); color:rgba(255,255,255,.9);">
+          <div class="pattern-desc milli island" style="border-color:rgba(0,0,0,.05); color:rgba(0,0,0,.9);">
             <div class="max-length"><p>Info cards should be used to display the different cereal brands the website offers. These cards include a button that links the user to more information regarding the brand and gives them the choice of buying the cereal.</p>
 </div>
           </div>
 
-      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="color:rgb(255,255,255);">
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="color:rgb(0,0,0);">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
           <div class="resizeable-pattern relative" style="">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/cards/info-card.html" scrolling="no" data-inject-css=":root { --color-patternbot-interface:255; --color-patternbot-interface-opposite:0; --color-patternbot-background:--color-primary; } " ></iframe>
+            <iframe data-src="patterns/cards/info-card.html" scrolling="no" data-inject-css=":root { --color-patternbot-interface:0; --color-patternbot-interface-opposite:255; --color-patternbot-background:#b0ddea; } " ></iframe>
               <div class="resizeable-pattern-length">
-                <div class="resize-handle resize-handle-left" style="border-color:rgba(255,255,255,.1); color:rgba(255,255,255,.3);">
+                <div class="resize-handle resize-handle-left" style="border-color:rgba(0,0,0,.1); color:rgba(0,0,0,.3);">
                   <i class="icon i-18">
                     <svg><use xlink:href="#icon-resize-handle" /></svg>
                   </i>
                 </div>
-                <div class="resize-handle resize-handle-right" style="border-color:rgba(255,255,255,.1); color:rgba(255,255,255,.3);">
+                <div class="resize-handle resize-handle-right" style="border-color:rgba(0,0,0,.1); color:rgba(0,0,0,.3);">
                   <i class="icon i-18">
                     <svg><use xlink:href="#icon-resize-handle" /></svg>
                   </i>
@@ -1058,18 +1130,18 @@
         </div>
 
           <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="cards-info-card-code-sample" tabindex="-1">
-            <div class="pattern-code relative milli island-1-2" style="border-color:rgba(255,255,255,.05); color:rgba(255,255,255,.9);">
+            <div class="pattern-code relative milli island-1-2" style="border-color:rgba(0,0,0,.05); color:rgba(0,0,0,.9);">
               <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#cards-info-card-code-sample-copy-chunk" hidden>
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="cards-info-card-code-sample-copy-chunk">&lt;div class="card text-center"&gt;
-  &lt;div class="text-center">
+              <code><pre id="cards-info-card-code-sample-copy-chunk">&lt;div class=" center-block card text-center"&gt;
+  &lt;div class=" pad-top text-center">
     &lt;img class="img" src="../../images/froot-loops.png" alt="">
   &lt;/div>
-  &lt;div>
-    &lt;h5 class="push-1-4">Froot Loops Cereal&lt;/h5>
+  &lt;div class="pad-b">
+    &lt;h5 class="froot push-1-4">Froot Loops&lt;/h5>
     &lt;a class="btn btn-card" href="#">LEARN MORE&lt;/a>
   &lt;/div>
 &lt;/div>
@@ -1083,7 +1155,7 @@
 
         <section class="pattern" id="footer" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Footer</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Footer</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
             <li>
               <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="footer-footer-code-sample">
@@ -1151,7 +1223,7 @@
     &lt;div class="island unit xs-1 s-1 m-3-4 l-3-4">
       &lt;small class="milli">&#xA9; Cereal Nostalgia.All rights reserved.&lt;/small>
     &lt;/div>
-    &lt;div class="left unit xs-1 s-1 m-1-4 l-1-4 island">
+    &lt;div class="unit xs-1 s-1 m-1-4 l-1-4 text-center island">
       &lt;a class="social" href="#">
           &lt;i class="icon icon-footer i-32">
             &lt;svg>
@@ -1186,7 +1258,7 @@
 
         <section class="pattern" id="forms" role="tabpanel" hidden aria-hidden="true" >
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" >
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Forms</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Forms</h2>
       <nav class="pattern-nav">
         <ol class="list-group-inline push-1-4 pad-b-1-4">
             <li><a href="#forms--basic-input">Basic input</a></li>
@@ -1265,8 +1337,10 @@ Personal information &amp; Shipping details.</p>
               </button>
               <code><pre id="forms-basic-input-code-sample-copy-chunk">&lt;form class="max-lenght island" method="post" action="#"&gt;
   &lt;div class="push-1-2">
-    &lt;label for="name">Name&lt;/label>
-    &lt;input id="name" required>
+    &lt;div class="form">
+      &lt;label for="name">Name&lt;/label>
+      &lt;input id="name" required>
+    &lt;/div>
   &lt;/div>
 &lt;/form>
 </pre></code>
@@ -1433,7 +1507,7 @@ Personal information &amp; Shipping details.</p>
 
         <section class="pattern" id="header" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Header</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Header</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
             <li>
               <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="header-header-code-sample">
@@ -1495,34 +1569,36 @@ Personal information &amp; Shipping details.</p>
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="header-header-code-sample-copy-chunk">&lt;div class="header"&gt;
-  &lt;div class="island unit xs-1 s-1 m-1 l-1 relative">
-    &lt;a class="logo" href="index.html">
-        &lt;i class="icon i-64">
-          &lt;img src="../../images/logo-64.svg" alt="">
+              <code><pre id="header-header-code-sample-copy-chunk">&lt;header class="masthead" role="banner"&gt;
+  &lt;div>
+    &lt;a class="logo block island-1-2" href="#">
+      &lt;i class="icon i-96">
+          &lt;img src="../../images/logo-256.svg" alt="">
         &lt;/i>
       &lt;/a>
-    &lt;nav class="unit xs-1-2 s-1-2 m-2-3 l-3-4 pad-top-half push-none">
-      &lt;ul class="list-group-inline right">
-        &lt;li class="list-group-item gutter-half pad-top pad-bottom-half">
-          &lt;a class="mega text-center" href="">Home&lt;/a>
-        &lt;/li>
-        &lt;li class="list-group-item gutter-half pad-top pad-bottom-half">
-          &lt;a class="mega text-center" href="">Our cereals&lt;/a>
-        &lt;/li>
-        &lt;li class="list-group-item gutter-half pad-top pad-bottom-half">
-          &lt;a class="mega text-center" href="">Fun recipes&lt;/a>
-        &lt;/li>
-        &lt;li class="list-group-item gutter-half pad-top pad-bottom-half">
-          &lt;a class="mega text-center" href="">Contact us&lt;/a>
-        &lt;/li>
-        &lt;li class="list-group-item gutter-half pad-top pad-bottom-half">
-          &lt;a class="mega text-center" href="">Check out&lt;/a>
-        &lt;/li>
+  &lt;/div>
+  &lt;div>
+    &lt;nav class="nav pad-t-1-2 pad-b-1-2 giga" role="navigation" id="nav">
+      &lt;ul class="list-group-inline push-0">
+        &lt;li class="gutter-1-2">&lt;a href="home.html">Home&lt;/a>&lt;/li>
+        &lt;li class="gutter-1-2">&lt;a href="product.html">Our cereals&lt;/a>&lt;/li>
+        &lt;li class="gutter-1-2">&lt;a href="#">Fun recipes&lt;/a>&lt;/li>
+        &lt;li class="gutter-1-2">&lt;a href="#">Contact us&lt;/a>&lt;/li>
       &lt;/ul>
     &lt;/nav>
   &lt;/div>
-&lt;/div>
+  &lt;div class="pad-b-1-2 pad-t-1-2">
+    &lt;a class="logo island-1-2" href="#">
+        &lt;i class="icon i-32">&lt;svg>&lt;use xlink:href="../../images/icons.svg#search"/>&lt;/svg>
+          &lt;/i>
+        &lt;/a>
+    &lt;a class="logo island-1-2" href="#">
+          &lt;i class="icon i-32">&lt;svg>&lt;use xlink:href="../../images/icons.svg#cart"/>&lt;/svg>
+            &lt;/i>
+          &lt;/a>
+  &lt;/div>
+
+&lt;/header>
 </pre></code>
             </div>
           </div>
@@ -1533,7 +1609,7 @@ Personal information &amp; Shipping details.</p>
 
         <section class="pattern" id="intro-section" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Intro section</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Intro section</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
             <li>
               <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="intro-section-intro-section-code-sample">
@@ -1550,7 +1626,7 @@ Personal information &amp; Shipping details.</p>
               </button>
             </li>
             <li>
-              <a class="center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/intro section/intro-section.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+              <a class="center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/intro-section/intro-section.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-pop-out"></use></svg>
                 </i>
@@ -1572,7 +1648,7 @@ Personal information &amp; Shipping details.</p>
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
           <div class="resizeable-pattern relative" style="">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/intro section/intro-section.html" scrolling="no" data-inject-css=" " ></iframe>
+            <iframe data-src="patterns/intro-section/intro-section.html" scrolling="no" data-inject-css=" " ></iframe>
               <div class="resizeable-pattern-length">
                 <div class="resize-handle resize-handle-left" style="">
                   <i class="icon i-18">
@@ -1595,7 +1671,7 @@ Personal information &amp; Shipping details.</p>
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="intro-section-intro-section-code-sample-copy-chunk">&lt;section class="intro-section island push" id="our-cereal"&gt;
+              <code><pre id="intro-section-intro-section-code-sample-copy-chunk">&lt;section class="intro-section island" id="our-cereal"&gt;
   &lt;div class="wrapper">
     &lt;div class="intro-text max-length push-2">
       &lt;h2 class="tera push-1-4 pad-t-1-2">Our Cereals&lt;/h2>
@@ -1623,7 +1699,7 @@ Personal information &amp; Shipping details.</p>
 
         <section class="pattern" id="navigation" role="tabpanel" hidden aria-hidden="true" >
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" >
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Navigation</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Navigation</h2>
       <nav class="pattern-nav">
         <ol class="list-group-inline push-1-4 pad-b-1-4">
             <li><a href="#navigation--search">Search</a></li>
@@ -1785,7 +1861,7 @@ Personal information &amp; Shipping details.</p>
 
         <section class="pattern" id="section" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: ; ">Section</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #b0ddea; font-family: ;">Section</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
             <li>
               <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="section-sections-code-sample">
@@ -1857,31 +1933,18 @@ Personal information &amp; Shipping details.</p>
     &lt;/div>
   &lt;/div>
 
-  &lt;div class="grid">
-    &lt;div class="unit xs-1 s-1 m-1-3 l-1-3 text-center push">
+  &lt;div class="grid wrapper">
+    &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 text-center push">
       &lt;i class="icon i-128 push-1-2">
             &lt;svg>&lt;use xlink:href="../../images/icons.svg#cereal-box"/>&lt;/svg>
           &lt;/i>
       &lt;h4 class="giga push-1-4 pad-t-1-2"> 1- CHOOSE CEREAL BOX&lt;/h4>
     &lt;/div>
-    &lt;div class="unit xs-1 s-1 m-1-3 l-1-3 text-center push">
+    &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 text-center push">
       &lt;i class="icon i-128 push-1-2">
             &lt;svg>&lt;use xlink:href="../../images/icons.svg#mix-flavour"/>&lt;/svg>
           &lt;/i>
       &lt;h4 class="giga push-1-4 pad-t-1-2"> 2- MIX FLAVOURS&lt;/h4>
-    &lt;/div>
-  &lt;/div>
-&lt;/section>
-
-&lt;section class="section island push" id="about-us">
-  &lt;div class="wrapper">
-    &lt;div class="section-text max-length push-2">
-      &lt;h2 class="tera push-1-4 pad-t-1-2">Froot Loops cereal&lt;/h2>
-      &lt;p class="push-1-2">
-        A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
-      &lt;/p>
-      &lt;a class="btn" href="#">CHECK OUT&lt;/a>
-      &lt;a class="btn btn-card" href="#">MIX FLAVOURS&lt;/a>
     &lt;/div>
   &lt;/div>
 &lt;/section>
