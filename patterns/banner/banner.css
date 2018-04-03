@@ -16,7 +16,7 @@
   min-width: 220px;
   min-height: 150px;
   max-height: 400px;
-  transform:scale(1.5)
+  transform:scale(.8);
 }
 
 .banner-img {
@@ -36,6 +36,8 @@
   border-color: #fff;
 }
 
-@media only screen and (min-width: 20em) {
-
+@media only screen and (min-width: 90em) {
+  .banner-content {
+    transform: scale(2);
+  }
 }
