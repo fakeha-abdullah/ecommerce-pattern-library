@@ -12,7 +12,6 @@ html {
 }
 
 h1 {
-  #
 }
 
 a{
@@ -51,4 +50,8 @@ strong {
 mark {
   color: #000;
   background-color: #fddf78;
+}
+
+.section-bg {
+  background-color: #b0ddea;
 }
