@@ -12,33 +12,35 @@
   <link href="header.css" rel="stylesheet">
 </head>
 <body>
-  <div class="header">
-    <div class="island unit xs-1 s-1 m-1 l-1 relative">
-      <a class="logo" href="index.html">
-        <i class="icon i-64">
-          <img src="../../images/logo-64.svg" alt="">
+  <header class="masthead" role="banner">
+    <div>
+    <a class="logo block island-1-2" href="#">
+      <i class="icon i-96">
+          <img src="../../images/logo-256.svg" alt="">
         </i>
       </a>
-      <nav class="unit xs-1-2 s-1-2 m-2-3 l-3-4 pad-top-half push-none">
-        <ul class="list-group-inline right">
-          <li class="list-group-item gutter-half pad-top pad-bottom-half">
-            <a class="mega text-center" href="">Home</a>
-          </li>
-          <li class="list-group-item gutter-half pad-top pad-bottom-half">
-            <a class="mega text-center" href="">Our cereals</a>
-          </li>
-          <li class="list-group-item gutter-half pad-top pad-bottom-half">
-            <a class="mega text-center" href="">Fun recipes</a>
-          </li>
-          <li class="list-group-item gutter-half pad-top pad-bottom-half">
-            <a class="mega text-center" href="">Contact us</a>
-          </li>
-          <li class="list-group-item gutter-half pad-top pad-bottom-half">
-            <a class="mega text-center" href="">Check out</a>
-          </li>
+    </div>
+    <div>
+      <nav class="nav pad-t-1-2 pad-b-1-2 giga" role="navigation" id="nav">
+        <ul class="list-group-inline push-0">
+          <li class="gutter-1-2"><a href="home.html">Home</a></li>
+          <li class="gutter-1-2"><a href="product.html">Our cereals</a></li>
+          <li class="gutter-1-2"><a href="#">Fun recipes</a></li>
+          <li class="gutter-1-2"><a href="#">Contact us</a></li>
         </ul>
       </nav>
     </div>
-  </div>
+    <div class="pad-b-1-2 pad-t-1-2">
+      <a class="logo island-1-2" href="#">
+        <i class="icon i-32"><svg><use xlink:href="../../images/icons.svg#search" /></svg>
+          </i>
+        </a>
+        <a class="logo island-1-2" href="#">
+          <i class="icon i-32"><svg><use xlink:href="../../images/icons.svg#cart" /></svg>
+            </i>
+          </a>
+      </div>
+
+    </header>
 </body>
 </html>
