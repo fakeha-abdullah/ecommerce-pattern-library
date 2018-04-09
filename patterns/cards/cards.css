@@ -32,3 +32,95 @@ color: #5d4677;
   height: 200px;
   margin: 0 auto;
 }
+
+.description {
+  display: inline-block;
+}
+
+.nav-description:checked ~ .description {
+  display: none;
+}
+
+.nav-description {
+  position: absolute;
+  top: -10em;
+}
+
+[type="checkbox"] + label::before {
+  display: none;
+}
+
+.ingredients {
+  display: none;
+}
+
+.nav-ingredients:checked ~ .ingredients {
+  display: inline-block;
+}
+
+.allergens {
+  display: none;
+}
+
+.nav-allergens:checked ~ .allergens {
+  display: inline-block;
+}
+
+.sizes {
+  display: none;
+}
+
+.nav-sizes:checked ~ .sizes {
+  display: inline-block;
+}
+
+.section-card {
+  background-color: #fff;
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+  min-height: 300px;
+}
+
+.section-t {
+  text-align: left;
+  color: #105c67;
+}
+
+.btn {
+  background-color: #fddf78;
+  border-radius: 20px;
+  border-color: #fff;
+
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fddf78;
+  color: #105c67;
+  border-color: #fff;
+}
+
+.btn-card {
+  background-color: #b0ddea;
+  border-radius: 20px;
+  border-color: #fff;
+
+  color: #fff;
+}
+
+.btn-card:hover {
+  background-color: #b0ddea;
+  color: #105c67;
+  border-color: #fff;
+}
+
+.link-btn {
+  background-color: #f0d4d0;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.link-btn:hover {
+  color: #105c67;
+}
