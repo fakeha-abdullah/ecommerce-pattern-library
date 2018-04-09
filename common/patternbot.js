@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1522777207484
+ * @version 1523311680866
  */
-const patternManifest_1522777207484 = {
+const patternManifest_1523311680866 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -594,6 +594,11 @@ const patternManifest_1522777207484 = {
         "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/home.html"
       },
       {
+        "name": "product-review.html",
+        "namePretty": "Product review",
+        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product-review.html"
+      },
+      {
         "name": "product.html",
         "namePretty": "Product",
         "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product.html"
@@ -662,7 +667,14 @@ const patternManifest_1522777207484 = {
           "namePretty": "Details card",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/details-card.html",
           "localPath": "patterns/cards/details-card.html",
-          "readme": {}
+          "readme": {
+            "background-color": "var(--color-primary)",
+            "backgroundColour": "#b0ddea",
+            "interfaceColours": {
+              "primary": 0,
+              "opposite": 255
+            }
+          }
         },
         {
           "name": "info-card",
@@ -677,6 +689,12 @@ const patternManifest_1522777207484 = {
               "opposite": 255
             }
           }
+        },
+        {
+          "name": "product-card",
+          "namePretty": "Product card",
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/product-card.html",
+          "localPath": "patterns/cards/product-card.html"
         }
       ],
       "md": [
@@ -914,5 +932,5 @@ const patternManifest_1522777207484 = {
   }
 };
 
-patternBotIncludes(patternManifest_1522777207484);
+patternBotIncludes(patternManifest_1523311680866);
 }());

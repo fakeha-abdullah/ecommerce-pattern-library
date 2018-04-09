@@ -262,6 +262,16 @@
                 </a>
               </li>
               <li>
+                <a class="gutter pad-t-1-4 pad-b-1-4 block page-pop" href="pages/product-review.html" target="_blank">
+                  <div class="relative">
+                    <span>Product review</span>
+                    <i class="icon i-18 absolute pin-cr">
+                      <svg><use xlink:href="#icon-pop-out" /></svg>
+                    </i>
+                  </div>
+                </a>
+              </li>
+              <li>
                 <a class="gutter pad-t-1-4 pad-b-1-4 block page-pop" href="pages/product.html" target="_blank">
                   <div class="relative">
                     <span>Product</span>
@@ -895,7 +905,7 @@
       &lt;div class="banner-content island">
         &lt;div class="gutter-1-4">
           &lt;h1 class="push-0 tera">Calling out children of the 90&apos;s &amp; seekers of something new!&lt;/h1>
-          &lt;a class="btn micro" href="#">CHECK OUR CEREALS&lt;/a>
+          &lt;a class="btn micro" href="product.html">CHECK OUR CEREALS&lt;/a>
         &lt;/div>
       &lt;/div>
     &lt;/div>
@@ -994,6 +1004,7 @@
         <ol class="list-group-inline push-1-4 pad-b-1-4">
             <li><a href="#cards--details-card">Details card</a></li>
             <li><a href="#cards--info-card">Info card</a></li>
+            <li><a href="#cards--product-card">Product card</a></li>
         </ol>
       </nav>
   </div>
@@ -1005,8 +1016,8 @@
 
   
 
-    <div class="pattern-details " id="cards--details-card" style="">
-        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+    <div class="pattern-details pattern-details-has-bg" id="cards--details-card" style="background-color:#b0ddea;">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="border-color:rgba(0,0,0,.1); color:rgba(0,0,0,.9);">
           <h3 class="pattern-name tera push-1-8">Details card</h3>
             <ul class="list-group-inline gutter absolute pin-cr">
                 <li>
@@ -1033,18 +1044,18 @@
             </ul>
         </div>
 
-      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="color:rgb(0,0,0);">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
           <div class="resizeable-pattern relative" style="">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/cards/details-card.html" scrolling="no" data-inject-css=" " ></iframe>
+            <iframe data-src="patterns/cards/details-card.html" scrolling="no" data-inject-css=":root { --color-patternbot-interface:0; --color-patternbot-interface-opposite:255; --color-patternbot-background:#b0ddea; } " ></iframe>
               <div class="resizeable-pattern-length">
-                <div class="resize-handle resize-handle-left" style="">
+                <div class="resize-handle resize-handle-left" style="border-color:rgba(0,0,0,.1); color:rgba(0,0,0,.3);">
                   <i class="icon i-18">
                     <svg><use xlink:href="#icon-resize-handle" /></svg>
                   </i>
                 </div>
-                <div class="resize-handle resize-handle-right" style="">
+                <div class="resize-handle resize-handle-right" style="border-color:rgba(0,0,0,.1); color:rgba(0,0,0,.3);">
                   <i class="icon i-18">
                     <svg><use xlink:href="#icon-resize-handle" /></svg>
                   </i>
@@ -1054,21 +1065,63 @@
         </div>
 
           <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="cards-details-card-code-sample" tabindex="-1">
-            <div class="pattern-code relative milli island-1-2" style="">
+            <div class="pattern-code relative milli island-1-2" style="border-color:rgba(0,0,0,.05); color:rgba(0,0,0,.9);">
               <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#cards-details-card-code-sample-copy-chunk" hidden>
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="cards-details-card-code-sample-copy-chunk">&lt;div class="section island push" id="detail-page"&gt;
-  &lt;div class="wrapper">
-    &lt;div class="section-text max-length push-2">
-      &lt;h2 class="tera push-1-4 pad-t-1-2">Froot Loops cereal&lt;/h2>
-      &lt;p class="push-1-2">
-        A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
-      &lt;/p>
-      &lt;a class="btn" href="#">CHECK OUT&lt;/a>
-      &lt;a class="btn btn-card" href="#">MIX FLAVOURS&lt;/a>
+              <code><pre id="cards-details-card-code-sample-copy-chunk">&lt;div class="pad-t" id="detail-page"&gt;
+  &lt;div class="section-card center-block wrapper island push">
+    &lt;div class="grid section-t push-2">
+      &lt;div class="pad-top inline-block xs-1 s-1 m-1 l-1-4">
+        &lt;img class="img" src="../../images/froot-loops.png" alt="">
+      &lt;/div>
+      &lt;div class="unit xs-1 s-1 m-1 l-3-4">
+        &lt;h2 class="tera push-1-4 pad-t-1-2">Froot Loops cereal&lt;/h2>
+        &lt;ul class="list-group-inline">
+          &lt;li class="inline-block">
+            &lt;input type="checkbox" class="nav-description" id="nav-description">
+            &lt;label class="gutter-1-2 link-btn" for="nav-description">Product Description&lt;/label>
+            &lt;div class="description">
+              &lt;p class="push-1-2">
+                A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
+              &lt;/p>
+            &lt;/div>
+          &lt;/li>
+          &lt;li class="inline-block">
+            &lt;input type="checkbox" class="nav-ingredients" id="nav-ingredients">
+            &lt;label class="gutter-1-2 link-btn" for="nav-ingredients">- Ingredients&lt;/label>
+            &lt;div class="ingredients">
+              &lt;p class="push-1-2">
+                A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
+              &lt;/p>
+            &lt;/div>
+          &lt;/li>
+          &lt;li class="inline-block">
+            &lt;input type="checkbox" class="nav-allergens" id="nav-allergens">
+            &lt;label class="gutter-1-2 link-btn" for="nav-allergens"> - Allergens&lt;/label>
+
+            &lt;div class="allergens">
+              &lt;p class="push-1-2">
+                A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
+              &lt;/p>
+            &lt;/div>
+          &lt;/li>
+          &lt;li class="inline-block">
+            &lt;input type="checkbox" class="nav-sizes" id="nav-sizes">
+            &lt;label class="gutter-1-2 link-btn" for="nav-sizes"> - Avaliable sizes&lt;/label>
+            &lt;div class="sizes">
+              &lt;p class="push-1-2">
+                A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
+              &lt;/p>
+            &lt;/div>
+          &lt;/li>
+        &lt;/ul>
+
+        &lt;a class="btn" href="check-out.html">ADD TO CART&lt;/a>
+        &lt;a class="btn btn-card" href="#">MIX FLAVOURS&lt;/a>
+      &lt;/div>
     &lt;/div>
   &lt;/div>
 &lt;/div>
@@ -1105,7 +1158,7 @@
             </ul>
         </div>
           <div class="pattern-desc milli island" style="border-color:rgba(0,0,0,.05); color:rgba(0,0,0,.9);">
-            <div class="max-length"><p>Info cards should be used to display the different cereal brands the website offers. These cards include a button that links the user to more information regarding the brand and gives them the choice of buying the cereal.</p>
+            <div class="max-length"><p>Info cards should be used to display the different cereal brands the website offers. These cards include a button that links the user to more information regarding the brand and gives them the choice of buying the cereal or mixing flavours first.</p>
 </div>
           </div>
 
@@ -1142,7 +1195,94 @@
   &lt;/div>
   &lt;div class="pad-b">
     &lt;h5 class="froot push-1-4">Froot Loops&lt;/h5>
-    &lt;a class="btn btn-card" href="#">LEARN MORE&lt;/a>
+    &lt;a class="btn btn-card" href="product-review.html">LEARN MORE&lt;/a>
+  &lt;/div>
+&lt;/div>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="cards--product-card" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Product card</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="cards-product-card-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="cards/product-card" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/cards/product-card.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/cards/product-card.html" scrolling="no" data-inject-css=" " ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="cards-product-card-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#cards-product-card-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="cards-product-card-code-sample-copy-chunk">&lt;div class="section-card island push" id="detail-page"&gt;
+  &lt;div class="wrapper">
+    &lt;div class="section-text max-length push-2">
+      &lt;div class="grid">
+        &lt;div class="unit xs-1 s-1 m-1-2 l-1-2">
+          &lt;h3 class="tera push-1-4 pad-t-1-2">Your products&lt;/h3>
+          &lt;p class="push-1-2">
+            Froot Loops Cereal $
+          &lt;/p>
+          &lt;p>
+            Rice Krispies Cereal $
+          &lt;/p>
+        &lt;/div>
+        &lt;div class="unit xs-1 s-1 m-1-4 l-1-4">
+          &lt;p class="pad-t mega">
+            Cart Total $
+          &lt;/p>
+        &lt;/div>
+        &lt;div class="unit xs-1 s-1 m-1-4 l-1-4">
+          &lt;div class="pad-t">
+            &lt;a class="btn micro" href="check-out.html">CHECK OUT&lt;/a>
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
   &lt;/div>
 &lt;/div>
 </pre></code>
@@ -1592,7 +1732,7 @@ Personal information &amp; Shipping details.</p>
         &lt;i class="icon i-32">&lt;svg>&lt;use xlink:href="../../images/icons.svg#search"/>&lt;/svg>
           &lt;/i>
         &lt;/a>
-    &lt;a class="logo island-1-2" href="#">
+    &lt;a class="logo island-1-2" href="check-out.html">
           &lt;i class="icon i-32">&lt;svg>&lt;use xlink:href="../../images/icons.svg#cart"/>&lt;/svg>
             &lt;/i>
           &lt;/a>
