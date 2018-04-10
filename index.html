@@ -1475,12 +1475,18 @@ Personal information &amp; Shipping details.</p>
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-basic-input-code-sample-copy-chunk">&lt;form class="max-lenght island" method="post" action="#"&gt;
+              <code><pre id="forms-basic-input-code-sample-copy-chunk">&lt;form class="max-lenght island" method="post" action="#" novalidate=""&gt;
+  &lt;div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
+    &lt;h3 class="white push-0">
+        &lt;span class="icon-label">There are items that require your attention!&lt;/span>
+      &lt;/h3>
+  &lt;/div>
   &lt;div class="push-1-2">
-    &lt;div class="form">
-      &lt;label for="name">Name&lt;/label>
-      &lt;input id="name" required>
-    &lt;/div>
+    &lt;label for="name">Name&lt;/label>
+    &lt;input id="name" required aria-describedby="name-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="name-error">
+      &lt;span class="icon-label">Please provide a name&lt;/span>
+    &lt;/p>
   &lt;/div>
 &lt;/form>
 </pre></code>
@@ -1548,8 +1554,8 @@ Personal information &amp; Shipping details.</p>
                 </i>
               </button>
               <code><pre id="forms-check-box-code-sample-copy-chunk">&lt;form class="max-lenght island" method="post" action="#"&gt;
-  &lt;div class="push-1-2">
-    &lt;input id="save" type="checkbox" name="save">
+  &lt;div class="push-1-2 pad-t-1-2">
+    &lt;input type="checkbox" id="save" required>
     &lt;label for="save">Save this information for next time&lt;/label>
   &lt;/div>
 &lt;/form>
