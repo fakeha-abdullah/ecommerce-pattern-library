@@ -34,11 +34,11 @@ color: #5d4677;
 }
 
 .description {
-  display: inline-block;
+  display: none;
 }
 
-.nav-description:checked ~ .description {
-  display: none;
+.nav-description:checked ~ .content .description {
+  display: block;
 }
 
 .nav-description {
@@ -54,24 +54,24 @@ color: #5d4677;
   display: none;
 }
 
-.nav-ingredients:checked ~ .ingredients {
-  display: inline-block;
+.nav-ingredients:checked ~ .content .ingredients {
+  display: block;
 }
 
 .allergens {
   display: none;
 }
 
-.nav-allergens:checked ~ .allergens {
-  display: inline-block;
+.nav-allergens:checked ~ .content .allergens {
+  display: block;
 }
 
 .sizes {
   display: none;
 }
 
-.nav-sizes:checked ~ .sizes {
-  display: inline-block;
+.nav-sizes:checked ~ .content .sizes {
+  display: block;
 }
 
 .section-card {
@@ -122,5 +122,9 @@ color: #5d4677;
 }
 
 .link-btn:hover {
+  color: #105c67;
+}
+
+.link-btn-main {
   color: #105c67;
 }
