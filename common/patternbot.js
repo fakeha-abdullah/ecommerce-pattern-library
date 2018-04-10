@@ -86,11 +86,17 @@ const patternBotIncludes = function (manifest) {
     `},
   };
 
+  let jsFileQueue = {
+    sync: [],
+    async: [],
+  };
   let downloadedAssets = {};
 
   const downloadHandler = function (e) {
+    const id = (e.target.hasAttribute('src')) ? e.target.getAttribute('src') : e.target.getAttribute('href');
+
     e.target.removeEventListener('load', downloadHandler);
-    downloadedAssets[e.target.getAttribute('href')] = true;
+    downloadedAssets[id] = true;
   };
 
   const findRootPath = function () {
@@ -115,7 +121,7 @@ const patternBotIncludes = function (manifest) {
     newLink.addEventListener('load', downloadHandler);
 
     document.head.appendChild(newLink);
-  }
+  };
 
   const bindAllCssFiles = function (rootPath) {
     if (manifest.commonInfo && manifest.commonInfo.readme && manifest.commonInfo.readme.attributes &&  manifest.commonInfo.readme.attributes.fontUrl) {
@@ -136,6 +142,54 @@ const patternBotIncludes = function (manifest) {
         addCssFile(`../${css.localPath}`);
       });
     });
+  };
+
+  const queueAllJsFiles = function (rootPath) {
+    if (manifest.patternLibFiles && manifest.patternLibFiles.js) {
+      manifest.patternLibFiles.js.forEach((js) => {
+        const href = `..${manifest.config.commonFolder}/${js.filename}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.sync.push(href);
+      });
+    }
+
+    manifest.userPatterns.forEach((pattern) => {
+      if (!pattern.js) return;
+
+      pattern.js.forEach((js) => {
+        const href = `../${js.localPath}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.async.push(href);
+      });
+    });
+  };
+
+  const addJsFile = function (href) {
+    const newScript = document.createElement('script');
+
+    newScript.setAttribute('src', href);
+    document.body.appendChild(newScript);
+
+    return newScript;
+  };
+
+  const bindNextJsFile = function (e) {
+    if (e && e.target) {
+      e.target.removeEventListener('load', bindNextJsFile);
+      downloadedAssets[e.target.getAttribute('src')] = true;
+    }
+
+    if (jsFileQueue.sync.length > 0) {
+      const scriptTag = addJsFile(jsFileQueue.sync.shift());
+      scriptTag.addEventListener('load', bindNextJsFile);
+    } else {
+      jsFileQueue.async.forEach((js) => {
+        const scriptTag = addJsFile(js);
+        scriptTag.addEventListener('load', downloadHandler);
+      });
+    }
   };
 
   const getPatternInfo = function (patternElem) {
@@ -312,7 +366,7 @@ const patternBotIncludes = function (manifest) {
           if (resp.status >= 200 && resp.status <= 299) {
             return resp.text();
           } else {
-            console.group('Cannot location pattern');
+            console.group('Cannot locate pattern');
             console.log(resp.url);
             console.log(`Error ${resp.status}: ${resp.statusText}`);
             console.groupEnd();
@@ -368,11 +422,13 @@ const patternBotIncludes = function (manifest) {
 
     rootPath = findRootPath();
     bindAllCssFiles(rootPath);
+    queueAllJsFiles(rootPath);
     allPatternTags = findAllPatternTags();
     allPatterns = constructAllPatterns(rootPath, allPatternTags);
 
     loadAllPatterns(allPatterns).then((allLoadedPatterns) => {
       renderAllPatterns(allPatternTags, allLoadedPatterns);
+      bindNextJsFile();
       hideLoadingScreen();
     }).catch((e) => {
       console.group('Pattern load error');
@@ -387,10 +443,10 @@ const patternBotIncludes = function (manifest) {
 
 /** 
  * Patternbot library manifest
- * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1523376566488
+ * /Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha
+ * @version e6ac5c1b203ba69499ea3a479a3f8f9cc49108d0
  */
-const patternManifest_1523376566488 = {
+const patternManifest_e6ac5c1b203ba69499ea3a479a3f8f9cc49108d0 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -553,63 +609,70 @@ const patternManifest_1523376566488 = {
   },
   "patternLibFiles": {
     "commonParsable": {
-      "gridifier": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/common/grid.css",
-      "typografier": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/common/type.css",
-      "modulifier": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/common/modules.css",
-      "theme": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/common/theme.css"
+      "gridifier": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/common/grid.css",
+      "typografier": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/common/type.css",
+      "modulifier": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/common/modules.css",
+      "theme": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/common/theme.css"
     },
     "imagesParsable": {
-      "icons": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/images/icons.svg"
+      "icons": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/images/icons.svg"
     },
     "logos": {
-      "sizeLarge": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-256.svg",
-      "size64": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-64.svg",
-      "size32": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-32.svg",
-      "size16": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-16.svg",
+      "sizeLarge": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/images/logo-256.svg",
+      "size64": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/images/logo-64.svg",
+      "size32": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/images/logo-32.svg",
+      "size16": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/images/logo-16.svg",
       "size16Local": "logo-16.svg",
       "sizeLargeLocal": "logo-256.svg",
       "size32Local": "logo-32.svg",
       "size64Local": "logo-64.svg"
     },
     "patterns": [
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banner",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation",
-      "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/section"
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/banner",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/buttons",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/cards",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/footer",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/forms",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/header",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/intro-section",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/navigation",
+      "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/section"
     ],
     "pages": [
       {
         "name": "check-out.html",
         "namePretty": "Check out",
-        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/check-out.html"
+        "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/pages/check-out.html"
       },
       {
         "name": "home.html",
         "namePretty": "Home",
-        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/home.html"
+        "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/pages/home.html"
+      },
+      {
+        "name": "product-details-page.html",
+        "namePretty": "Product details page",
+        "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/pages/product-details-page.html"
       },
       {
         "name": "product.html",
         "namePretty": "Product",
-        "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product.html"
+        "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/pages/product.html"
       }
-    ]
+    ],
+    "js": []
   },
   "userPatterns": [
     {
       "name": "banner",
       "namePretty": "Banner",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banner",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/banner",
       "html": [
         {
           "name": "banner",
           "namePretty": "Banner",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banner/banner.html",
+          "filename": "banner",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/banner/banner.html",
           "localPath": "patterns/banner/banner.html"
         }
       ],
@@ -618,20 +681,23 @@ const patternManifest_1523376566488 = {
         {
           "name": "banner",
           "namePretty": "Banner",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banner/banner.css",
+          "filename": "banner",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/banner/banner.css",
           "localPath": "patterns/banner/banner.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "buttons",
       "namePretty": "Buttons",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/buttons",
       "html": [
         {
           "name": "buttons",
           "namePretty": "Buttons",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons/buttons.html",
+          "filename": "buttons",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/buttons/buttons.html",
           "localPath": "patterns/buttons/buttons.html"
         }
       ],
@@ -639,7 +705,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
       ],
@@ -647,32 +714,37 @@ const patternManifest_1523376566488 = {
         {
           "name": "buttons",
           "namePretty": "Buttons",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons/buttons.css",
+          "filename": "buttons",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "cards",
       "namePretty": "Cards",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/cards",
       "html": [
         {
           "name": "details-card",
           "namePretty": "Details card",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/details-card.html",
+          "filename": "details-card",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/cards/details-card.html",
           "localPath": "patterns/cards/details-card.html"
         },
         {
           "name": "info-card",
           "namePretty": "Info card",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/info-card.html",
+          "filename": "info-card",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/cards/info-card.html",
           "localPath": "patterns/cards/info-card.html"
         },
         {
           "name": "product-card",
           "namePretty": "Product card",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/product-card.html",
+          "filename": "product-card",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/cards/product-card.html",
           "localPath": "patterns/cards/product-card.html"
         }
       ],
@@ -680,7 +752,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
       ],
@@ -688,20 +761,23 @@ const patternManifest_1523376566488 = {
         {
           "name": "cards",
           "namePretty": "Cards",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/cards.css",
+          "filename": "cards",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "footer",
       "namePretty": "Footer",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/footer",
       "html": [
         {
           "name": "footer",
           "namePretty": "Footer",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer/footer.html",
+          "filename": "footer",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/footer/footer.html",
           "localPath": "patterns/footer/footer.html"
         }
       ],
@@ -709,7 +785,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/footer/README.md",
           "localPath": "patterns/footer/README.md"
         }
       ],
@@ -717,34 +794,39 @@ const patternManifest_1523376566488 = {
         {
           "name": "footer",
           "namePretty": "Footer",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer/footer.css",
+          "filename": "footer",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/footer/footer.css",
           "localPath": "patterns/footer/footer.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "forms",
       "namePretty": "Forms",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/forms",
       "html": [
         {
           "name": "basic-input",
           "namePretty": "Basic input",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/basic-input.html",
+          "filename": "basic-input",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/forms/basic-input.html",
           "localPath": "patterns/forms/basic-input.html",
           "readme": {}
         },
         {
           "name": "check-box",
           "namePretty": "Check box",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/check-box.html",
+          "filename": "check-box",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/forms/check-box.html",
           "localPath": "patterns/forms/check-box.html",
           "readme": {}
         },
         {
           "name": "select-box",
           "namePretty": "Select box",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/select-box.html",
+          "filename": "select-box",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/forms/select-box.html",
           "localPath": "patterns/forms/select-box.html",
           "readme": {}
         }
@@ -753,7 +835,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/forms/README.md",
           "localPath": "patterns/forms/README.md"
         }
       ],
@@ -761,20 +844,23 @@ const patternManifest_1523376566488 = {
         {
           "name": "forms",
           "namePretty": "Forms",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/forms.css",
+          "filename": "forms",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "header",
       "namePretty": "Header",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/header",
       "html": [
         {
           "name": "header",
           "namePretty": "Header",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header/header.html",
+          "filename": "header",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/header/header.html",
           "localPath": "patterns/header/header.html"
         }
       ],
@@ -782,7 +868,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/header/README.md",
           "localPath": "patterns/header/README.md"
         }
       ],
@@ -790,20 +877,23 @@ const patternManifest_1523376566488 = {
         {
           "name": "header",
           "namePretty": "Header",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header/header.css",
+          "filename": "header",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/header/header.css",
           "localPath": "patterns/header/header.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "intro-section",
       "namePretty": "Intro section",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/intro-section",
       "html": [
         {
           "name": "intro-section",
           "namePretty": "Intro section",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/intro-section.html",
+          "filename": "intro-section",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/intro-section/intro-section.html",
           "localPath": "patterns/intro-section/intro-section.html"
         }
       ],
@@ -811,7 +901,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/intro-section/README.md",
           "localPath": "patterns/intro-section/README.md"
         }
       ],
@@ -819,27 +910,31 @@ const patternManifest_1523376566488 = {
         {
           "name": "intro-section",
           "namePretty": "Intro section",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/intro-section.css",
+          "filename": "intro-section",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/intro-section/intro-section.css",
           "localPath": "patterns/intro-section/intro-section.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "navigation",
       "namePretty": "Navigation",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/navigation",
       "html": [
         {
           "name": "search",
           "namePretty": "Search",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/search.html",
+          "filename": "search",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/navigation/search.html",
           "localPath": "patterns/navigation/search.html",
           "readme": {}
         },
         {
           "name": "sub-nav",
           "namePretty": "Sub nav",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/sub-nav.html",
+          "filename": "sub-nav",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/navigation/sub-nav.html",
           "localPath": "patterns/navigation/sub-nav.html",
           "readme": {}
         }
@@ -848,7 +943,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/navigation/README.md",
           "localPath": "patterns/navigation/README.md"
         }
       ],
@@ -856,20 +952,23 @@ const patternManifest_1523376566488 = {
         {
           "name": "navigation",
           "namePretty": "Navigation",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/navigation.css",
+          "filename": "navigation",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/navigation/navigation.css",
           "localPath": "patterns/navigation/navigation.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "section",
       "namePretty": "Section",
-      "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/section",
+      "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/section",
       "html": [
         {
           "name": "sections",
           "namePretty": "Sections",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/section/sections.html",
+          "filename": "sections",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/section/sections.html",
           "localPath": "patterns/section/sections.html"
         }
       ],
@@ -877,7 +976,8 @@ const patternManifest_1523376566488 = {
         {
           "name": "readme",
           "namePretty": "Readme",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/section/README.md",
+          "filename": "README",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/section/README.md",
           "localPath": "patterns/section/README.md"
         }
       ],
@@ -885,10 +985,12 @@ const patternManifest_1523376566488 = {
         {
           "name": "sections",
           "namePretty": "Sections",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/section/sections.css",
+          "filename": "sections",
+          "path": "/Users/shrinidhisridhar/Documents/Graphic Design Program/Semester 4/WEB DEV 4/ecommerce-pattern-library-fakeha/patterns/section/sections.css",
           "localPath": "patterns/section/sections.css"
         }
-      ]
+      ],
+      "js": []
     }
   ],
   "config": {
@@ -911,5 +1013,5 @@ const patternManifest_1523376566488 = {
   }
 };
 
-patternBotIncludes(patternManifest_1523376566488);
+patternBotIncludes(patternManifest_e6ac5c1b203ba69499ea3a479a3f8f9cc49108d0);
 }());
