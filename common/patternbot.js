@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1523368824567
+ * @version 1523372145954
  */
-const patternManifest_1523368824567 = {
+const patternManifest_1523372145954 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -666,29 +666,13 @@ const patternManifest_1523368824567 = {
           "name": "details-card",
           "namePretty": "Details card",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/details-card.html",
-          "localPath": "patterns/cards/details-card.html",
-          "readme": {
-            "background-color": "var(--color-primary)",
-            "backgroundColour": "#b0ddea",
-            "interfaceColours": {
-              "primary": 0,
-              "opposite": 255
-            }
-          }
+          "localPath": "patterns/cards/details-card.html"
         },
         {
           "name": "info-card",
           "namePretty": "Info card",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/info-card.html",
-          "localPath": "patterns/cards/info-card.html",
-          "readme": {
-            "background-color": "var(--color-primary)",
-            "backgroundColour": "#b0ddea",
-            "interfaceColours": {
-              "primary": 0,
-              "opposite": 255
-            }
-          }
+          "localPath": "patterns/cards/info-card.html"
         },
         {
           "name": "product-card",
@@ -932,5 +916,5 @@ const patternManifest_1523368824567 = {
   }
 };
 
-patternBotIncludes(patternManifest_1523368824567);
+patternBotIncludes(patternManifest_1523372145954);
 }());
