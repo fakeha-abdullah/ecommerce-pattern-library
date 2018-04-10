@@ -15,51 +15,50 @@
 
   <div class="pad-t" id="detail-page">
     <div class="section-card center-block wrapper island push">
-      <div class="grid section-t push-2">
+      <input type="radio" name="tabs" class="nav-sizes" id="nav-sizes">
+        <input type="radio" name="tabs" class="nav-description" id="nav-description" checked>
+          <input type="radio" name="tabs" class="nav-ingredients" id="nav-ingredients">
+            <input type="radio" name="tabs" class="nav-allergens" id="nav-allergens">
+      <div class="content grid section-t push-2">
         <div class="pad-top inline-block xs-1 s-1 m-1 l-1-4">
           <img class="img" src="../../images/froot-loops.png" alt="">
         </div>
         <div class="unit xs-1 s-1 m-1 l-3-4">
         <h2 class="tera push-1-4 pad-t-1-2">Froot Loops cereal</h2>
-        <ul class="list-group-inline">
+        <ul class="list-group-inline link-btn">
           <li class="inline-block">
-            <input type="checkbox" class="nav-description" id="nav-description">
-            <label class="gutter-1-2 link-btn" for="nav-description">Product Description</label>
-            <div class="description">
-              <p class="push-1-2">
-            A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
-            </p>
-        </div>
+            <label class="gutter-1-2 link-btn-main" for="nav-description">Product Description</label>
           </li>
     <li class="inline-block">
-        <input type="checkbox" class="nav-ingredients" id="nav-ingredients">
         <label class="gutter-1-2 link-btn" for="nav-ingredients">- Ingredients</label>
-        <div class="ingredients">
-        <p class="push-1-2">
-        Sugar, whole grain corn flour, wheat flour, whole grain oat flour, oat hull fibre, corn bran, hydrogenated coconut and vegetable oil, salt, colour, natural fruit flavouring, bht, Vitamins and minerals: iron, niacinamide, zinc oxide, thiamine hydrochloride, d-calcium pantothenate, cholecalciferol (vitamin d3), pyridoxine hydrochloride, folic acid.
-        </p>
-        </div>
     </li>
     <li class="inline-block">
-        <input type="checkbox" class="nav-allergens" id="nav-allergens">
         <label class="gutter-1-2 link-btn" for="nav-allergens"> - Allergens</label>
-
-        <div class="allergens">
-        <p class="push-1-2">
-        Contains wheat and oat ingredients. May contain soy.
-        </p>
-        </div>
     </li>
     <li class="inline-block">
-        <input type="checkbox" class="nav-sizes" id="nav-sizes">
         <label class="gutter-1-2 link-btn" for="nav-sizes"> - Avaliable sizes</label>
-        <div class="sizes">
-        <p class="push-1-2">
-        275 g, 580 g, 53 g, 825 g, 345 g, 255 g, 4 - 53 g, 1.1 kg, Individual.
-        </p>
-        </div>
       </li>
     </ul>
+    <div class="description">
+      <p class="push-1-2">
+    A colourful breakfast cereal with incredible taste and aroma made with corn, wheat, whole grain oats, and natural fruit flavouring. Low in fat and a source of 7 essential nutrients.
+    </p>
+</div>
+<div class="ingredients">
+<p class="push-1-2">
+Sugar, whole grain corn flour, wheat flour, whole grain oat flour, oat hull fibre, corn bran, hydrogenated coconut and vegetable oil, salt, colour, natural fruit flavouring, bht, Vitamins and minerals: iron, niacinamide, zinc oxide, thiamine hydrochloride, d-calcium pantothenate, cholecalciferol (vitamin d3), pyridoxine hydrochloride, folic acid.
+</p>
+</div>
+<div class="allergens">
+  <p class="push-1-2">
+  Contains wheat and oat ingredients. May contain soy.
+  </p>
+  </div>
+  <div class="sizes">
+  <p class="push-1-2">
+  275 g, 580 g, 53 g, 825 g, 345 g, 255 g, 4 - 53 g, 1.1 kg, Individual.
+  </p>
+  </div>
 
         <a class="btn" href="check-out.html">ADD TO CART</a>
         <a class="btn btn-card" href="#">MIX FLAVOURS</a>
