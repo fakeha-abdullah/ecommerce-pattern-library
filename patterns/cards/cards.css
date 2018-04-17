@@ -118,13 +118,16 @@ color: #5d4677;
   background-color: #f0d4d0;
   border-radius: 20px;
   text-decoration: none;
-  color: #fff;
 }
 
-.link-btn:hover {
+.link-btn-hover:hover {
   color: #105c67;
 }
 
 .link-btn-main {
   color: #105c67;
+}
+
+.link-btn-hover {
+  color: #fff;
 }
