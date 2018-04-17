@@ -1,7 +1,7 @@
 ---
 details-card:
   description: |
-  Detail cards are cards that gives detailed information of the cereal the user chose. Such information include - (product description,ingredients,allergens and available sizes).There's an "Add to cart" and "Mix flavours" button choices.
+    Detail cards are cards that gives detailed information of the cereal the user chose. Such information include - (product description,ingredients,allergens and available sizes).There's an "Add to cart" and "Mix flavours" button choices.
   background-color: "var(--color-primary)"
 
 info-card:
