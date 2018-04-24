@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1524578789913
+ * @version 1524580095997
  */
-const patternManifest_1524578789913 = {
+const patternManifest_1524580095997 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -788,13 +788,15 @@ const patternManifest_1524578789913 = {
           "name": "date-input",
           "namePretty": "Date input",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/date-input.html",
-          "localPath": "patterns/forms/date-input.html"
+          "localPath": "patterns/forms/date-input.html",
+          "readme": {}
         },
         {
           "name": "number-input",
           "namePretty": "Number input",
-          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/Number-input.html",
-          "localPath": "patterns/forms/Number-input.html"
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/number-input.html",
+          "localPath": "patterns/forms/number-input.html",
+          "readme": {}
         },
         {
           "name": "select-box",
@@ -966,5 +968,5 @@ const patternManifest_1524578789913 = {
   }
 };
 
-patternBotIncludes(patternManifest_1524578789913);
+patternBotIncludes(patternManifest_1524580095997);
 }());
