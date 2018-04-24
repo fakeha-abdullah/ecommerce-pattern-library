@@ -1267,7 +1267,7 @@
               </button>
               <code><pre id="cards-product-card-code-sample-copy-chunk">&lt;div class="section-card island push" id="detail-page"&gt;
   &lt;div class="wrapper">
-    &lt;div class="section-text max-length push-2">
+    &lt;div class="text max-length push-2">
       &lt;div class="grid">
         &lt;div class="unit xs-1 s-1 m-1-2 l-1-2">
           &lt;h3 class="tera push-1-4 pad-t-1-2">Your products&lt;/h3>
@@ -1410,6 +1410,10 @@
         <ol class="list-group-inline push-1-4 pad-b-1-4">
             <li><a href="#forms--basic-input">Basic input</a></li>
             <li><a href="#forms--check-box">Check box</a></li>
+            <li><a href="#forms--country-input">Country input</a></li>
+            <li><a href="#forms--credit-card-input">Credit card input</a></li>
+            <li><a href="#forms--date-input">Date input</a></li>
+            <li><a href="#forms--number-input">Number input</a></li>
             <li><a href="#forms--select-box">Select box</a></li>
         </ol>
       </nav>
@@ -1482,7 +1486,7 @@ Personal information &amp; Shipping details.</p>
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-basic-input-code-sample-copy-chunk">&lt;form class="max-lenght island" method="post" action="#" novalidate=""&gt;
+              <code><pre id="forms-basic-input-code-sample-copy-chunk">&lt;form class="max-length gutter" method="post" action="#" novalidate=""&gt;
   &lt;div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
     &lt;h3 class="white push-0">
         &lt;span class="icon-label">There are items that require your attention!&lt;/span>
@@ -1490,6 +1494,20 @@ Personal information &amp; Shipping details.</p>
   &lt;/div>
   &lt;div class="push-1-2">
     &lt;label for="name">Name&lt;/label>
+    &lt;input id="name" required aria-describedby="name-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="name-error">
+      &lt;span class="icon-label">Please provide a name&lt;/span>
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="E-mail">E-mail&lt;/label>
+    &lt;input type="email" id="email" required aria-describedby="email-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="email-error">
+      &lt;span class="icon-label">Please provide your E-mail address&lt;/span>
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="name">Address&lt;/label>
     &lt;input id="name" required aria-describedby="name-error">
     &lt;p class="error-message milli island-1-4 push-0" id="name-error">
       &lt;span class="icon-label">Please provide a name&lt;/span>
@@ -1564,6 +1582,331 @@ Personal information &amp; Shipping details.</p>
   &lt;div class="push-1-2 pad-t-1-2">
     &lt;input type="checkbox" id="save" required>
     &lt;label for="save">Save this information for next time&lt;/label>
+  &lt;/div>
+&lt;/form>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="forms--country-input" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Country input</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-country-input-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/country-input" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/country-input.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+          <div class="pattern-desc milli island" style="">
+            <div class="max-length"><p>Country input field allows the user to fill in their country, city and zip code. The zip code allows letters and numbers.</p>
+</div>
+          </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/forms/country-input.html" scrolling="no" data-inject-css=" " ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-country-input-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-country-input-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="forms-country-input-code-sample-copy-chunk">&lt;form class="max-length" method="post" action="#" novalidate=""&gt;
+  &lt;div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
+    &lt;h3 class="white push-0">
+        &lt;span class="icon-label">There are items that require your attention!&lt;/span>
+      &lt;/h3>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="text">Country&lt;/label>
+    &lt;input type="text" id="text" required aria-describedby="text-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="text-error">
+      &lt;span class="icon-label">Please add country&lt;/span>
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="text">City&lt;/label>
+    &lt;input type="text" id="text" required aria-describedby="text-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="text-error">
+      &lt;span class="icon-label">Please add city&lt;/span>
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="text">Zip code&lt;/label>
+    &lt;input type="text" id="text" required aria-describedby="text-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="text-error">
+      &lt;span class="icon-label">Please add zip code&lt;/span>
+    &lt;/p>
+  &lt;/div>
+&lt;/form>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="forms--credit-card-input" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Credit card input</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-credit-card-input-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/credit-card-input" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/credit-card-input.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+          <div class="pattern-desc milli island" style="">
+            <div class="max-length"><p>Credit card input allows users to type in credit card information.</p>
+</div>
+          </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/forms/credit-card-input.html" scrolling="no" data-inject-css=" " ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-credit-card-input-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-credit-card-input-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="forms-credit-card-input-code-sample-copy-chunk">&lt;form class="max-length gutter" method="post" action="#" novalidate=""&gt;
+  &lt;div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
+    &lt;h3 class="white push-0">
+        &lt;span class="icon-label">There are items that require your attention!&lt;/span>
+      &lt;/h3>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="name">Credit card number&lt;/label>
+    &lt;input type="tel" id="name" required aria-describedby="name-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="name-error">
+      &lt;span class="icon-label">Please provide credit card number&lt;/span>
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="name">CVV code&lt;/label>
+    &lt;input type="tel" id="name" required aria-describedby="name-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="name-error">
+      &lt;span class="icon-label">Please provide cvv code&lt;/span>
+    &lt;/p>
+  &lt;/div>
+&lt;/form>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="forms--date-input" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Date input</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-date-input-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/date-input" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/date-input.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/forms/date-input.html" scrolling="no" data-inject-css=" " ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-date-input-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-date-input-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="forms-date-input-code-sample-copy-chunk">&lt;form class="max-length gutter" method="post" action="#" novalidate=""&gt;
+  &lt;div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
+    &lt;h3 class="white push-0">
+        &lt;span class="icon-label">There are items that require your attention!&lt;/span>
+      &lt;/h3>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="date">Expiry date&lt;/label>
+    &lt;input type="date" id="date" required aria-describedby="date-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="date-error">
+      &lt;span class="icon-label">Please provide expiry date&lt;/span>
+    &lt;/p>
+  &lt;/div>
+&lt;/form>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="forms--number-input" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Number input</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-number-input-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/number-input" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/Number-input.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/forms/Number-input.html" scrolling="no" data-inject-css=" " ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-number-input-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-number-input-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="forms-number-input-code-sample-copy-chunk">&lt;form class="max-length gutter" method="post" action="#" novalidate=""&gt;
+  &lt;div class="error-message error-message-highlighted push island-1-2" role="alert" aria-live="assertive">
+    &lt;h3 class="white push-0">
+        &lt;span class="icon-label">There are items that require your attention!&lt;/span>
+      &lt;/h3>
+  &lt;/div>
+  &lt;div class="push-1-2">
+    &lt;label for="name">Phone number&lt;/label>
+    &lt;input type="tel" id="name" required aria-describedby="name-error">
+    &lt;p class="error-message milli island-1-4 push-0" id="name-error">
+      &lt;span class="icon-label">Please provide a phone number&lt;/span>
+    &lt;/p>
   &lt;/div>
 &lt;/form>
 </pre></code>
@@ -1722,7 +2065,15 @@ Personal information &amp; Shipping details.</p>
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="header-header-code-sample-copy-chunk">&lt;header class="masthead" role="banner"&gt;
+              <code><pre id="header-header-code-sample-copy-chunk">&lt;ul class="skip-links"&gt;
+  &lt;li>
+    &lt;a href="#nav">Skip to nav&lt;/a>
+  &lt;/li>
+  &lt;li>
+    &lt;a href="#main">Skip to main&lt;/a>
+  &lt;/li>
+&lt;/ul>
+&lt;header class="masthead" role="banner">
   &lt;div>
     &lt;a class="logo block island-1-2" href="#">
       &lt;i class="icon i-96">

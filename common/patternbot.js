@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1523983220167
+ * @version 1524578789913
  */
-const patternManifest_1523983220167 = {
+const patternManifest_1524578789913 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -771,6 +771,32 @@ const patternManifest_1523983220167 = {
           "readme": {}
         },
         {
+          "name": "country-input",
+          "namePretty": "Country input",
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/country-input.html",
+          "localPath": "patterns/forms/country-input.html",
+          "readme": {}
+        },
+        {
+          "name": "credit-card-input",
+          "namePretty": "Credit card input",
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/credit-card-input.html",
+          "localPath": "patterns/forms/credit-card-input.html",
+          "readme": {}
+        },
+        {
+          "name": "date-input",
+          "namePretty": "Date input",
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/date-input.html",
+          "localPath": "patterns/forms/date-input.html"
+        },
+        {
+          "name": "number-input",
+          "namePretty": "Number input",
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/Number-input.html",
+          "localPath": "patterns/forms/Number-input.html"
+        },
+        {
           "name": "select-box",
           "namePretty": "Select box",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/select-box.html",
@@ -940,5 +966,5 @@ const patternManifest_1523983220167 = {
   }
 };
 
-patternBotIncludes(patternManifest_1523983220167);
+patternBotIncludes(patternManifest_1524578789913);
 }());
