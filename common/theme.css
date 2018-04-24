@@ -4,34 +4,33 @@
   --color-accent: #ec7d72;
   --color-yellow: #fddf78;
   --font-primary: "Nunito Sans", sans-serif;
-  /* --font-secondary: astounder-squared-lc-bb, sans-serif; */
 }
 
 html {
   font-family: var(--font-primary);
 }
 
-h1 {
-}
-
-a{
+a {
   color: #b0ddea;
 }
 
 h1 {
   color: #ec7d72;
 }
+
 h2 {
   color: #5d4677;
 }
+
 h3 {
   color: #148b9f;
 }
+
 h4 {
   color: #148b9f;
 }
 
-ul,li,ol,dl,dt,dd {
+ul, li, ol, dl, dt, dd {
   color: #5d4677;
 }
 

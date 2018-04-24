@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1524580095997
+ * @version 1524612125813
  */
-const patternManifest_1524580095997 = {
+const patternManifest_1524612125813 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -858,6 +858,12 @@ const patternManifest_1524580095997 = {
       "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section",
       "html": [
         {
+          "name": "intro-section-checkout",
+          "namePretty": "Intro section checkout",
+          "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/intro-section-checkout.html",
+          "localPath": "patterns/intro-section/intro-section-checkout.html"
+        },
+        {
           "name": "intro-section",
           "namePretty": "Intro section",
           "path": "/Users/fakehaabdullah/Documents/Graphic Design Program/Semester 1/Semester 3/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/intro-section/intro-section.html",
@@ -968,5 +974,5 @@ const patternManifest_1524580095997 = {
   }
 };
 
-patternBotIncludes(patternManifest_1524580095997);
+patternBotIncludes(patternManifest_1524612125813);
 }());
