@@ -16,7 +16,7 @@ html {
 .error-message:first-child,
 input:invalid + .error-message,
 input:invalid + label + .error-message {
-  display:block;
+  display:none;
 }
 
 .is-validated input:invalid,
@@ -24,6 +24,16 @@ input:invalid + label + .error-message {
   border-color: #f33;
 }
 
+.is-validated > .error-message:first-child,
+.is-validated input:invalid + .error-message,
+.is-validated input:invalid + label + .error-message {
+  display: block;
+}
+
 .white {
   color:#fff;
+}
+
+.h3 {
+  text-align: center;
 }

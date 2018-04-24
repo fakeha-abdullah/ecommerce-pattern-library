@@ -7,6 +7,12 @@ check-box: |
 
 select-box: |
   Select boxes allow a user to pick one of many options.
+
+country-input: |
+  Country input field allows the user to fill in their country, city and zip code. The zip code allows letters and numbers.
+
+credit-card-input: |
+    Credit card input allows users to type in credit card information.
 ---
 Forms are used to gather information about the user for shipping purposes. These are elements from the form basics:
 Personal information & Shipping details.
