@@ -2,7 +2,7 @@
 <html lang="en-ca">
 <head>
   <meta charset="utf-8">
-  <title>Basic input</title>
+  <title>Credit-card input</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="../../common/modules.css" rel="stylesheet">
   <link href="../../common/grid.css" rel="stylesheet">
@@ -21,17 +21,18 @@
     </div>
     <div class="push-1-2">
       <label for="name">Credit card number</label>
-      <input type="tel" id="name" required aria-describedby="name-error">
-      <p class="error-message milli island-1-4 push-0" id="name-error">
+      <input type="tel" id="name" required aria-describedby="credit-card-number-error">
+      <p class="error-message milli island-1-4 push-0" id="credit-card-number-error">
         <span class="icon-label">Please provide credit card number</span>
       </p>
     </div>
     <div class="push-1-2">
       <label for="name">CVV code</label>
-      <input type="tel" id="name" required aria-describedby="name-error">
-      <p class="error-message milli island-1-4 push-0" id="name-error">
+      <input type="tel" id="cvv-code" required aria-describedby="cvv-code-error">
+      <p class="error-message milli island-1-4 push-0" id="cvv-code-error">
         <span class="icon-label">Please provide cvv code</span>
       </p>
     </div>
+  </form>
 </body>
 </html>
