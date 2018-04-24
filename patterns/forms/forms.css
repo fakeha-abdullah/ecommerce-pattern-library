@@ -1,5 +1,5 @@
 html {
-  font-family: Nunito Sans;
+  font-family: "Nunito Sans";
 }
 
 .error-message {
@@ -16,7 +16,7 @@ html {
 .error-message:first-child,
 input:invalid + .error-message,
 input:invalid + label + .error-message {
-  display:none;
+  display: none;
 }
 
 .is-validated input:invalid,
@@ -31,7 +31,7 @@ input:invalid + label + .error-message {
 }
 
 .white {
-  color:#fff;
+  color: #fff;
 }
 
 .h3 {
