@@ -15,7 +15,7 @@ credit-card-input: |
   Credit card input allows users to type in credit card information. This input only allows numbers.
 
 date-input: |
-  Date input allows users to type their credit card expiry date. This input only accepts dates (numbers) and follows the day-month-year format.
+  Date input allows users to type their credit card expiry date. This input only accepts dates and shows a calendar picker dropdown.
 
 number-input: |
   Number input allows users to type their phone number. This input only allows numbers.
